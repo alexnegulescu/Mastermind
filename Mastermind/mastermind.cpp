@@ -38,11 +38,11 @@ int main() {
 	for (int j = 0; j < n; j++)
 		cout << codeToGuess[j] << " ";
 
-	while (guesses < 10) 
+	while (guesses < 10)
 	{
-		
+
 		cout << "\nPlease enter your guess code: " << endl;
-		for (int i = 0; i < n; i++) 
+		for (int i = 0; i < n; i++)
 		{
 			cin >> guessCodeDigit;
 			guessCode.push_back(guessCodeDigit);
@@ -53,6 +53,11 @@ int main() {
 
 		cout << totalCorrect << ", " << totalIncorrect;
 
+		if (totalCorrect == n) {
+			cout << "\nCongratulations, you guessed the correct code!\n";
+			break;
+		}
+			
 		guesses++;
 		guessCode.clear();
 	}
